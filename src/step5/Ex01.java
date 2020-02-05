@@ -26,12 +26,8 @@ public class Ex01 {
 		while (true) {
 			System.out.println(Arrays.toString(arr));
 
-			int max = (int) Double.NEGATIVE_INFINITY;
 			int maxIndex = 0;
-			for (int i = 0; i < arr.length; i++) {
-				if(arr[i] > max) maxIndex = i;
-				max = arr[maxIndex];
-			}
+			for (int i = 0; i < arr.length; i++) if(arr[i] > arr[maxIndex]) maxIndex = i;
 
 			System.out.print("가장 큰 값 입력 : ");
 			int num = in.nextInt();
@@ -43,8 +39,7 @@ public class Ex01 {
 				continue;
 			}
 			int sum = 0;
-			for (int i = 0; i < arr.length; i++)
-				sum += arr[i];
+			for (int i = 0; i < arr.length; i++) sum += arr[i];
 			if (sum == 0) {
 				System.out.println("끝!");
 				break;
